@@ -1,5 +1,6 @@
-package workspace.sampler.Objects;
+package workspace.sampler.Managers;
 
+import workspace.sampler.Objects.PropertiesFilesHandler;
 import workspace.sampler.fileExtract.CsvReader;
 import workspace.sampler.fileLoader.JsonFileLoader;
 
