@@ -5,14 +5,9 @@ import workspace.sampler.Objects.SampledPerson;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.zip.DataFormatException;
 
 public class CsvReader {
 
@@ -40,12 +35,4 @@ public class CsvReader {
         return new SampledPerson(record[0], record[1], record[2], record[3],
                 record[4], record[5], record[6],record[7],record[8],record[9], record[10], record[11]);
     }
-
-    /*public LocalDate toDate(String date) {
-        try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            return LocalDate.parse(date, formatter);
-        } catch (DateTimeParseException e) {Input is not a date}
-        return null;
-    }*/
 }
