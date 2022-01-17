@@ -1,18 +1,18 @@
 package workspace.sampler.Objects;
 
 public class SampledPerson {
-    String mdaCode;
-    String idNum;
-    String idType;
-    String firstName;
-    String lastName;
-    String city;
-    String street;
-    String buildingNumber;
-    String barcode;
-    String getDate;
-    String takeDate;
-    String resultDate;
+    private String mdaCode;
+    private String idNum;
+    private String idType;
+    private String firstName;
+    private String lastName;
+    private String city;
+    private String street;
+    private String buildingNumber;
+    private String barcode;
+    private String getDate;
+    private String takeDate;
+    private String resultDate;
 
     public SampledPerson(String mdaCode, String idNum, String idType, String firstName, String lastName, String city, String street, String buildingNumber, String barcode, String getDate, String takeDate, String resultDate) {
         this.mdaCode = mdaCode;
