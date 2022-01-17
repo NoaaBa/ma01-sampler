@@ -1,4 +1,4 @@
-package workspace.sampler.Objects;
+package workspace.sampler.Managers;
 
 import java.io.FileInputStream;
 import java.io.IOException;

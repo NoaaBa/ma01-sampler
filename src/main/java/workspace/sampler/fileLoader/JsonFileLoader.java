@@ -2,7 +2,7 @@ package workspace.sampler.fileLoader;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import workspace.sampler.Objects.PropertiesFilesHandler;
+import workspace.sampler.Managers.PropertiesFilesHandler;
 import workspace.sampler.Objects.SampledPerson;
 
 import java.io.*;
