@@ -1,7 +1,5 @@
 package workspace.sampler.Objects;
 
-import java.time.LocalDate;
-
 public class SampledPerson {
     String mdaCode;
     String idNum;
@@ -12,11 +10,11 @@ public class SampledPerson {
     String street;
     String buildingNumber;
     String barcode;
-    LocalDate getDate;
-    LocalDate takeDate;
-    LocalDate resultDate;
+    String getDate;
+    String takeDate;
+    String resultDate;
 
-    public SampledPerson(String mdaCode, String idNum, String idType, String firstName, String lastName, String city, String street, String buildingNumber, String barcode, LocalDate getDate, LocalDate takeDate, LocalDate resultDate) {
+    public SampledPerson(String mdaCode, String idNum, String idType, String firstName, String lastName, String city, String street, String buildingNumber, String barcode, String getDate, String takeDate, String resultDate) {
         this.mdaCode = mdaCode;
         this.idNum = idNum;
         this.idType = idType;
@@ -67,15 +65,33 @@ public class SampledPerson {
         return barcode;
     }
 
-    public LocalDate getGetDate() {
+    public String getGetDate() {
         return getDate;
     }
 
-    public LocalDate getTakeDate() {
+    public String getTakeDate() {
         return takeDate;
     }
 
-    public LocalDate getResultDate() {
+    public String getResultDate() {
         return resultDate;
+    }
+
+    @Override
+    public String toString() {
+        return "SampledPerson{" +
+                "mdaCode='" + mdaCode + '\'' +
+                ", idNum='" + idNum + '\'' +
+                ", idType='" + idType + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", buildingNumber='" + buildingNumber + '\'' +
+                ", barcode='" + barcode + '\'' +
+                ", getDate=" + getDate +
+                ", takeDate=" + takeDate +
+                ", resultDate=" + resultDate +
+                '}';
     }
 }
