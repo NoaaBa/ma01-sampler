@@ -15,7 +15,6 @@ public class CsvReader {
 
     public Set<SampledPerson> fileCsvReader(String fileName) {
         Set<SampledPerson> sampledPeople = new HashSet<>();
-        Path pathToFile = Paths.get(fileName);
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line = br.readLine();
 
