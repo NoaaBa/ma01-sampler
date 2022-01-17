@@ -2,6 +2,7 @@ package workspace.sampler.fileLoader;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import workspace.sampler.Objects.PropertiesFilesHandler;
 import workspace.sampler.Objects.SampledPerson;
 
 import java.io.*;
@@ -15,20 +16,22 @@ public class JsonFileLoader {
     public void jsonToCsvSerialization(Set<SampledPerson> sampledPersonSet) {
         Set<SampledPerson> smallerJsonSet = new HashSet<>();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        PropertiesFilesHandler propertiesFilesHandler = new PropertiesFilesHandler();
+
         int counter = 0, fileNum = 0;
         try {
             for (SampledPerson person : sampledPersonSet) {
                 smallerJsonSet.add(person);
                 counter++;
                 if (counter == maxJsonInFile) {
-                    gson.toJson(smallerJsonSet, new FileWriter("src/main/madaSampler/mada" + fileNum + ".json"));
+                    gson.toJson(smallerJsonSet, new FileWriter(propertiesFilesHandler.getMadaSamplerSaveLocation() + fileNum + ".json"));
                     fileNum++;
                     smallerJsonSet.clear();
                     counter = 0;
                 }
             }
         } catch (IOException e) {
-            System.out.println("Error processing CSV to json.");
+            System.out.println("Error processing CSV to json. " + this.getClass().getName());
         }
     }
 }
