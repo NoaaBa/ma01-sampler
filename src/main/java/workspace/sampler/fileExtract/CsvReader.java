@@ -5,7 +5,6 @@ import workspace.sampler.Objects.SampledPerson;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.*;
 import java.util.HashSet;
 import java.util.Set;
 
