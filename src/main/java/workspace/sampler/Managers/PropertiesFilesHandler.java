@@ -26,4 +26,11 @@ public class PropertiesFilesHandler {
         return this.generalProperties.getProperty("madaSamplerFilesPath");
     }
 
+    public String getLabTestsDatabase() {
+        return this.generalProperties.getProperty("labTests");
+    }
+
+    public String getLabTestSaveLocation() {
+        return this.generalProperties.getProperty("labTestsSaveFilesPath");
+    }
 }
