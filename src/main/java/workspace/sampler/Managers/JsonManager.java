@@ -1,15 +1,10 @@
 package workspace.sampler.Managers;
 
-import workspace.sampler.fileExtract.CsvReader;
-import workspace.sampler.fileLoader.JsonFileLoader;
-
-public class JsonManager {
+public class JsonManager extends FilesManager {
 
     public static void csvToJsonHandler() {
-        CsvReader csvReader = new CsvReader();
-        JsonFileLoader jsonFileLoader = new JsonFileLoader();
-
-        jsonFileLoader.jsonToCsvSerialization(csvReader.fileCsvReader
+        FilesManager filesManager = new FilesManager();
+        filesManager.getJsonFileLoader().jsonToCsvSerialization(filesManager.getCsvReader().fileCsvReader
                 (new PropertiesFilesHandler().getMadaSamplerDataBase()));
     }
 }
