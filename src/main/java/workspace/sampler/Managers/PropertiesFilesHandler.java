@@ -33,4 +33,8 @@ public class PropertiesFilesHandler {
     public String getLabTestSaveLocation() {
         return this.generalProperties.getProperty("labTestsSaveFilesPath");
     }
+
+    public String getPositiveCoviePeopleSaveLocation() {
+        return this.generalProperties.getProperty("positiveCovidPeopleSaveFilesPath");
+    }
 }

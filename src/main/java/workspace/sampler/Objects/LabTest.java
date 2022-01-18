@@ -5,11 +5,7 @@ import workspace.sampler.Managers.TestType;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class LabTest {
-    private String idNum;
-    private String idType;
-    private String firstName;
-    private String lastName;
+public class LabTest extends SampledPerson {
     private String resultDate;
     private String birthDate;
     private String labCode;
@@ -22,6 +18,7 @@ public class LabTest {
     private String healthCareName;
 
     public LabTest(String idNum, String idType, String firstName, String lastName, String resultDate, String birthDate, String labCode, String stickerNumber, String resultTestCorona, String variant, TestType testType) {
+        super(idNum, idType, firstName, lastName, resultTestCorona);
         this.idNum = idNum;
         this.idType = idType;
         this.firstName = firstName;

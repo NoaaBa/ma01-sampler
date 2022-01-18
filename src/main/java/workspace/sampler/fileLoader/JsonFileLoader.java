@@ -2,28 +2,26 @@ package workspace.sampler.fileLoader;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import workspace.sampler.Managers.PropertiesFilesHandler;
-import workspace.sampler.Objects.SampledPerson;
 
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
-public class JsonFileLoader {
+public class JsonFileLoader<T> {
 
     final static int maxJsonInFile = 200;
 
-    public void jsonToCsvSerialization(Set<SampledPerson> sampledPersonSet) {
-        Set<SampledPerson> smallerJsonSet = new HashSet<>();
+    public void csvToJsonSerialization(Set<T> tSet, String filePath) {
+        Set<T> smallerJsonSet = new HashSet<>();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         int counter = 0, fileNum = 0;
         try {
-            for (SampledPerson person : sampledPersonSet) {
+            for (T person : tSet) {
                 smallerJsonSet.add(person);
                 counter++;
                 if (counter == maxJsonInFile) {
-                    gson.toJson(smallerJsonSet, new FileWriter(new PropertiesFilesHandler().getMadaSamplerSaveLocation() + fileNum + ".json"));
+                    gson.toJson(smallerJsonSet, new FileWriter(filePath + fileNum + ".json"));
                     fileNum++;
                     smallerJsonSet.clear();
                     counter = 0;

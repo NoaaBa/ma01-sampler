@@ -1,11 +1,14 @@
 package workspace.sampler.Objects;
 
-public class SampledPerson {
+import workspace.sampler.Managers.TestType;
+
+public class SampledPerson{
+    protected String idNum;
+    protected String idType;
+    protected String firstName;
+    protected String lastName;
+
     private String mdaCode;
-    private String idNum;
-    private String idType;
-    private String firstName;
-    private String lastName;
     private String city;
     private String street;
     private String buildingNumber;
@@ -14,7 +17,26 @@ public class SampledPerson {
     private String takeDate;
     private String resultDate;
 
+    private String resultTestCorona;
+    private String birthDate;
+    private String labCode;
+    private String stickerNumber;
+    private String variant;
+    private TestType testType;
+
+    public SampledPerson(String idNum, String idType, String firstName, String lastName, String resultTestCorona) {
+        this.idNum = idNum;
+        this.idType = idType;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.resultTestCorona = resultTestCorona;
+    }
+
     public SampledPerson(String mdaCode, String idNum, String idType, String firstName, String lastName, String city, String street, String buildingNumber, String barcode, String getDate, String takeDate, String resultDate) {
+        this.idNum = idNum;
+        this.idType = idType;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.mdaCode = mdaCode;
         this.idNum = idNum;
         this.idType = idType;
@@ -75,6 +97,19 @@ public class SampledPerson {
 
     public String getResultDate() {
         return resultDate;
+    }
+
+    public String getResultTestCorona() {
+        return resultTestCorona;
+    }
+
+    public void addLabTests(String birthDate, String labCode, String stickerNumber, String resultTestCorona, TestType testType, String variant) {
+        this.birthDate = birthDate;
+        this.labCode = labCode;
+        this.stickerNumber = stickerNumber;
+        this.resultTestCorona=resultTestCorona;
+        this.testType = testType;
+        this.variant=variant;
     }
 
     @Override
