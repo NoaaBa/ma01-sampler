@@ -16,7 +16,6 @@ public class CsvReader<T> {
     public CsvReader() {}
 
     public Set<T> fileCsvReader(String fileName) {
-        Set<SampledPerson> sampledPeople = new HashSet<>();
         Set<T> tSet = new HashSet<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
