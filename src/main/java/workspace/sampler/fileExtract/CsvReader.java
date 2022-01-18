@@ -16,6 +16,7 @@ public class CsvReader<T> {
     public CsvReader() {}
 
     public Set<T> fileCsvReader(String fileName) {
+
         Set<T> tSet = new HashSet<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
@@ -32,7 +33,7 @@ public class CsvReader<T> {
 
                 line = br.readLine();
             }
-        } catch (IOException e) {
+        } catch (IOException | ArrayIndexOutOfBoundsException e) {
             System.out.println("Error reading csv file.");
         }
         return tSet;
