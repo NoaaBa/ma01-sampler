@@ -16,7 +16,6 @@ public class JsonFileLoader {
     public void jsonToCsvSerialization(Set<SampledPerson> sampledPersonSet) {
         Set<SampledPerson> smallerJsonSet = new HashSet<>();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        PropertiesFilesHandler propertiesFilesHandler = new PropertiesFilesHandler();
 
         int counter = 0, fileNum = 0;
         try {
@@ -24,7 +23,7 @@ public class JsonFileLoader {
                 smallerJsonSet.add(person);
                 counter++;
                 if (counter == maxJsonInFile) {
-                    gson.toJson(smallerJsonSet, new FileWriter(propertiesFilesHandler.getMadaSamplerSaveLocation() + fileNum + ".json"));
+                    gson.toJson(smallerJsonSet, new FileWriter(new PropertiesFilesHandler().getMadaSamplerSaveLocation() + fileNum + ".json"));
                     fileNum++;
                     smallerJsonSet.clear();
                     counter = 0;
