@@ -1,5 +1,6 @@
 package workspace.sampler.Managers;
 
+import workspace.sampler.fileTransformer.MedicalLabTestFetch;
 import workspace.sampler.fileExtract.CsvReader;
 import workspace.sampler.fileLoader.JsonFileLoader;
 import workspace.sampler.fileTransformer.ObjectToXmlConverter;
@@ -19,4 +20,6 @@ public class FilesManager {
     protected ObjectToXmlConverter getObjectToXmlConverter() {
         return new ObjectToXmlConverter();
     }
+
+    protected MedicalLabTestFetch getCsvColAddition() {return new MedicalLabTestFetch();}
 }
