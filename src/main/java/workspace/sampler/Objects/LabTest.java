@@ -2,6 +2,9 @@ package workspace.sampler.Objects;
 
 import workspace.sampler.Managers.TestType;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class LabTest {
     private String idNum;
     private String idType;
@@ -14,6 +17,9 @@ public class LabTest {
     private String resultTestCorona;
     private String variant;
     private TestType testType;
+    private String joinDate;
+    private String healthCareId;
+    private String healthCareName;
 
     public LabTest(String idNum, String idType, String firstName, String lastName, String resultDate, String birthDate, String labCode, String stickerNumber, String resultTestCorona, String variant, TestType testType) {
         this.idNum = idNum;
@@ -71,5 +77,50 @@ public class LabTest {
 
     public TestType getTestType() {
         return testType;
+    }
+
+    public LocalDate getJoinDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+        return LocalDate.parse(this.joinDate, formatter);
+    }
+
+    public String getHealthCareId() {
+        return healthCareId;
+    }
+
+    public String getHealthCareName() {
+        return healthCareName;
+    }
+
+    public void setJoinDate(String joinDate) {
+        this.joinDate = joinDate;
+    }
+
+    public void setHealthCareId(String healthCareId) {
+        this.healthCareId = healthCareId;
+    }
+
+    public void setHealthCareName(String healthCareName) {
+        this.healthCareName = healthCareName;
+    }
+
+    @Override
+    public String toString() {
+        return "LabTest{" +
+                "idNum='" + idNum + '\'' +
+                ", idType='" + idType + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", resultDate='" + resultDate + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                ", labCode='" + labCode + '\'' +
+                ", stickerNumber='" + stickerNumber + '\'' +
+                ", resultTestCorona='" + resultTestCorona + '\'' +
+                ", variant='" + variant + '\'' +
+                ", testType=" + testType +
+                ", joinDate='" + joinDate + '\'' +
+                ", healthCareId='" + healthCareId + '\'' +
+                ", healthCareName='" + healthCareName + '\'' +
+                '}';
     }
 }
